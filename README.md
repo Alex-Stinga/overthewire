@@ -31,8 +31,6 @@ SOLVE
 
 > cat readme
 
-
-
 The password we got: 
 
 
@@ -49,8 +47,11 @@ ls, cd, cat, file, du, find
 SOLVE
 
 > ssh bandit1@bandit.labs.overthewire.org -p 2220
+
 > ls -alh
+
 There is a text file with name - . The name is dash sign. To open this file we will use ./-name
+
 > cat ./-
 
 The password we got: 
