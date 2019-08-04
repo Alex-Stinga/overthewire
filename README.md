@@ -1,4 +1,4 @@
-# overthewire
+# overthewire. Bandit
 
 Level 0
 -------------
@@ -69,6 +69,7 @@ ls, cd, cat, file, du, find
 SOLVE
 
 > ssh bandit2@bandit.labs.overthewire.org -p 2220
+
 > cat spaces\ in\ this\ filename
 
 The password we got: 
@@ -86,8 +87,11 @@ ls, cd, cat, file, du, find
 SOLVE
 
 > ssh bandit3@bandit.labs.overthewire.org -p 2220
+
 > cd inhere
+
 > ls -lha
+
 > cat .hidden
 
 The password we got: 
@@ -104,10 +108,15 @@ ls, cd, cat, file, du, find
 SOLVE
 
 > ssh bandit4@bandit.labs.overthewire.org -p 2220
+
 > cd inhere
+
 > ls -lha
+
 > file ./*
+
 This command show that only -file07 has ASCII text, so this is the file that contains the password.
+
 > cat ./-file07
 
 The password we got: 
@@ -130,6 +139,7 @@ ls, cd, cat, file, du, find
 SOLVE
 
 > ssh bandit5@bandit.labs.overthewire.org -p 2220
+
 > find * maybeinhere* -size 1033c ! -executable
 
 The password we got: 
@@ -151,7 +161,9 @@ ls, cd, cat, file, du, find, grep
 SOLVE
 
 > ssh bandit6@bandit.labs.overthewire.org -p 2220
+
 > find / -user bandit7 -group bandit6 -size 33c
+
 > cat /var/lib/dpkg/info/bandit7.password
 
 The password we got: 
@@ -167,6 +179,7 @@ The password for the next level is stored in the file data.txt next to the word 
 SOLVE
 
 > ssh bandit7@bandit.labs.overthewire.org -p 2220
+
 > cat data.txt | grep millionth
 
 The password we got: 
@@ -184,6 +197,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 SOLVE
 
 > ssh bandit8@bandit.labs.overthewire.org -p 2220
+
 > cat data.txt | sort | uniq -u
 
 The password we got: 
@@ -198,6 +212,7 @@ The password for the next level is stored in the file data.txt in one of the few
 SOLVE
 
 > ssh bandit9@bandit.labs.overthewire.org -p 2220
+
 > strings data.txt
 
 The password we got: 
@@ -212,6 +227,7 @@ The password for the next level is stored in the file data.txt, which contains b
 SOLVE
 
 > ssh bandit10@bandit.labs.overthewire.org -p 2220
+
 > base64 -d <<< encoded_string_with_base64
 
 The password we got: 
@@ -221,8 +237,27 @@ Level 12
 -------------
 STATEMENT
 
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
 SOLVE
+
+> ssh bandit11@bandit.labs.overthewire.org -p 2220
+
+> cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+
+The password we got: 
+
+Level 13
+-------------
+STATEMENT
+
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+SOLVE
+
+> ssh bandit12@bandit.labs.overthewire.org -p 2220
+
+> 
 
 The password we got: 
 
