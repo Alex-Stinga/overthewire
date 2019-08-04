@@ -383,7 +383,26 @@ To gain access to the next level, you should use the setuid binary in the homedi
 
 SOLVE
 
+> ssh bandit19@bandit.labs.overthewire.org -p 2220
 
+> ./bandit20-do id
+
+> ./bandit20-do whoami
+
+> ./bandit20-do cat /etc/bandit_pass/bandit20
+
+The password we got: 
+
+
+Level 21
+-------------
+STATEMENT
+
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+NOTE: Try connecting to your own network daemon to see if it works as you think
+
+SOLVE
 
 The password we got: 
 
