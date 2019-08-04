@@ -257,7 +257,133 @@ SOLVE
 
 > ssh bandit12@bandit.labs.overthewire.org -p 2220
 
-> 
+> mkdir /tmp/alex
+
+> cp data.txt /tmp/alex
+
+> xxd -r data.txt >> reverse_archive
+
+> zcat reverse > data
+
+> bzip2 -d data
+
+> zcat data.out > data2
+
+> tar -xvf data2
+
+> tar -xvf data5.bin
+
+> bzip2 -d data6.bin
+
+> zcat data8.bin > final
+
+> cat final
+
+The password we got: 
+
+
+Level 14
+-------------
+STATEMENT
+
+The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
+
+SOLVE
+
+> ssh bandit13@bandit.labs.overthewire.org -p 2220
+
+> ssh bandit14@localhost -i sshkey.private
+
+> cat /etc/bandit_pass/bandit14
+
+The password we got: 
+
+
+Level 15
+-------------
+STATEMENT
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+SOLVE
+
+> nc localhost 300000
+
+The password we got: 
+
+
+Level 16
+-------------
+STATEMENT
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
+
+SOLVE
+
+> openssl s_client -connect localhost: 30001
+
+The password we got: 
+
+Level 17
+-------------
+STATEMENT
+
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+
+SOLVE
+
+> nmap -sT -A -p 31000-32000
+
+We found out that only port 31790 is open.
+
+> openssl s_client -connect localhost: 31790
+
+
+Level 18
+-------------
+STATEMENT
+
+There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
+
+SOLVE
+
+> cd ~
+
+> nano sshkey.private
+
+Paste the pivate key from the last level.
+
+> diff pasword.old password.new
+
+The password we got: 
+
+
+Level 19
+-------------
+STATEMENT
+
+The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+SOLVE
+
+> ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+
+The password we got: 
+
+
+Level 20
+-------------
+STATEMENT
+
+To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+SOLVE
+
+
 
 The password we got: 
 
