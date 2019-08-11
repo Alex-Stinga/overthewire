@@ -484,7 +484,7 @@ NOTE 2: Keep in mind that your shell script is removed once executed, so you may
 
 SOLVE
 
-> ssh bandit22@bandit.labs.overthewire.org -p 2220
+> ssh bandit23@bandit.labs.overthewire.org -p 2220
 
 > cd /etc/cron.d
 
@@ -530,10 +530,53 @@ Logging in to bandit26 from bandit25 should be fairly easy… The shell for user
 
 SOLVE
 
->
+The momment we login, we are logout. This level was tricky, i admit i searched the answer on the internet and without this i could not pass this level. Before login we need to minimize the terminal window so we can enter more. To enter vim we need to press v. 
+
+> ssh -i bandit26.sshkey bandit26@localhost
+
+:set shell=/bin/bash
+:shell
+
+After this we are bandit26.
 
 The password we got: 
 
+
+Level 27
+-------------
+STATEMENT
+
+Good job getting a shell! Now hurry and grab the password for bandit27!
+
+SOLVE
+
+After we execute ls, we see that we have a suid file and a text file. The text file doesn't have the password as we expect, so we need to use the suid file
+
+> ./bandit26 id
+
+> ./bandit26 whoami
+
+> ./bandit26 cat /etc/bandit_pass/bandit27
+
+The password we got: 
+
+Level 28
+-------------
+STATEMENT
+
+There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo. The password for the user bandit27-git is the same as for the user bandit27.
+
+Clone the repository and find the password for the next level.
+
+SOLVE
+
+> ssh bandit27@bandit.labs.overthewire.org -p 2220
+
+> git clone  ssh://bandit27-git@localhost/home/bandit27-git/repo destinationFolder
+
+> cat README
+
+The password we got: 
 
 
 Level x
