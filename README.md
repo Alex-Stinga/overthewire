@@ -31,7 +31,7 @@ SOLVE
 
 > cat readme
 
-The password we got: 
+The password we got: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 
 
@@ -54,7 +54,7 @@ There is a text file with name - . The name is dash sign. To open this file we w
 
 > cat ./-
 
-The password we got: 
+The password we got: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
 
 Level 3
@@ -72,7 +72,7 @@ SOLVE
 
 > cat spaces\ in\ this\ filename
 
-The password we got: 
+The password we got: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 
 Level 4
@@ -94,7 +94,7 @@ SOLVE
 
 > cat .hidden
 
-The password we got: 
+The password we got: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
 Level 5
 -------------
@@ -119,7 +119,7 @@ This command show that only -file07 has ASCII text, so this is the file that con
 
 > cat ./-file07
 
-The password we got: 
+The password we got: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 
 Level 6
@@ -142,7 +142,7 @@ SOLVE
 
 > find * maybeinhere* -size 1033c ! -executable
 
-The password we got: 
+The password we got: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 
 Level 7
@@ -166,7 +166,7 @@ SOLVE
 
 > cat /var/lib/dpkg/info/bandit7.password
 
-The password we got: 
+The password we got: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 
 
@@ -182,7 +182,7 @@ SOLVE
 
 > cat data.txt | grep millionth
 
-The password we got: 
+The password we got: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 
 Level 9
@@ -200,7 +200,7 @@ SOLVE
 
 > cat data.txt | sort | uniq -u
 
-The password we got: 
+The password we got: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 
 Level 10
@@ -215,7 +215,7 @@ SOLVE
 
 > strings data.txt
 
-The password we got: 
+The password we got: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 
 
 Level 11
@@ -230,7 +230,7 @@ SOLVE
 
 > base64 -d <<< encoded_string_with_base64
 
-The password we got: 
+The password we got: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 
 Level 12
@@ -245,7 +245,7 @@ SOLVE
 
 > cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 
-The password we got: 
+The password we got:  5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 Level 13
 -------------
@@ -279,7 +279,7 @@ SOLVE
 
 > cat final
 
-The password we got: 
+The password we got: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
 
 Level 14
@@ -296,7 +296,7 @@ SOLVE
 
 > cat /etc/bandit_pass/bandit14
 
-The password we got: 
+The password we got: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 
 
 Level 15
@@ -309,7 +309,7 @@ SOLVE
 
 > nc localhost 300000
 
-The password we got: 
+The password we got: BfMYroe26WYalil77FoDi9qh59eK5xNr
 
 
 Level 16
@@ -324,7 +324,7 @@ SOLVE
 
 > openssl s_client -connect localhost: 30001
 
-The password we got: 
+The password we got: cluFn7wTiGryunymYOu4RcffSxQluehd
 
 Level 17
 -------------
@@ -340,6 +340,7 @@ We found out that only port 31790 is open.
 
 > openssl s_client -connect localhost: 31790
 
+The password we got: cluFn7wTiGryunymYOu4RcffSxQluehd
 
 Level 18
 -------------
@@ -359,7 +360,7 @@ Paste the pivate key from the last level.
 
 > diff pasword.old password.new
 
-The password we got: 
+The password we got:  kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 
 
 Level 19
@@ -372,7 +373,7 @@ SOLVE
 
 > ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
 
-The password we got: 
+The password we got: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
 
 Level 20
@@ -391,7 +392,7 @@ SOLVE
 
 > ./bandit20-do cat /etc/bandit_pass/bandit20
 
-The password we got: 
+The password we got: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 
 Level 21
@@ -414,14 +415,14 @@ first:
 
 > echo "last_level_password" | nc -l -p 60000
 
-Next a password will appear.
+Next, a password will appear.
 
 second:
 
 > ./suconnect 60000
 
 
-The password we got: 
+The password we got: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
 
 Level 22
@@ -443,7 +444,7 @@ SOLVE
 
 > cat /tmp/t706...
 
-The password we got: 
+The password we got: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 
 
 Level 23
@@ -468,9 +469,7 @@ SOLVE
 
 > cat /tmp/8ca3...
 
-The password we got: 
-
-
+The password we got: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
 Level 24
 -------------
@@ -501,8 +500,7 @@ cat /etc/bandit_pass/bandit24 >> /tmp/numeDirector/nextPassword
 
 Check the created folder,numeDirector, for the nextPassword file.
 
-
-The password we got: 
+The password we got: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 
 
 Level 25
@@ -520,7 +518,7 @@ We need to create a bash script that will check every 4-digit code. The script i
 for i in{0000..9999}
   echo "password $i" | nc localhost 30002
 
-The password we got: 
+The password we got: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 
 Level 26
 -------------
@@ -538,9 +536,6 @@ The momment we login, we are logout. This level was tricky, i admit i searched t
 :shell
 
 After this we are bandit26.
-
-The password we got: 
-
 
 Level 27
 -------------
